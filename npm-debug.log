@@ -1,0 +1,281 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   '/usr/local/bin/node',
+1 verbose cli   '/Users/sam/node_modules/.bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   '@types/node'
+1 verbose cli ]
+2 info using npm@2.15.12
+3 info using node@v20.9.0
+4 verbose install initial load of /Users/sam/Work/Tech-test/package.json
+5 warn package.json Tech-test@1.0.0 No description
+6 verbose installManyTop reading scoped package data from /Users/sam/Work/Tech-test/node_modules/@playwright/test/package.json
+7 verbose readDependencies loading dependencies from /Users/sam/Work/Tech-test/package.json
+8 silly cache add args [ '@types/node', null ]
+9 verbose cache add spec @types/node
+10 silly cache add parsed spec Result {
+10 silly cache add   raw: '@types/node',
+10 silly cache add   scope: '@types',
+10 silly cache add   name: '@types/node',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: 'latest',
+10 silly cache add   type: 'tag'
+10 silly cache add }
+11 silly addNamed @types/node@latest
+12 verbose addNamed "latest" is being treated as a dist-tag for @types/node
+13 info addNameTag [ '@types/node', 'latest' ]
+14 silly mapToRegistry name @types/node
+15 silly mapToRegistry scope (from package name) @types
+16 verbose mapToRegistry no registry URL found in name for scope @types
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmmirror.com/
+19 silly mapToRegistry data Result {
+19 silly mapToRegistry   raw: '@types/node',
+19 silly mapToRegistry   scope: '@types',
+19 silly mapToRegistry   name: '@types/node',
+19 silly mapToRegistry   rawSpec: '',
+19 silly mapToRegistry   spec: 'latest',
+19 silly mapToRegistry   type: 'tag'
+19 silly mapToRegistry }
+20 silly mapToRegistry uri https://registry.npmmirror.com/@types%2fnode
+21 verbose addNameTag registry:https://registry.npmmirror.com/@types%2fnode not in flight; fetching
+22 verbose request uri https://registry.npmmirror.com/@types%2fnode
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 10:08:57 PM
+25 verbose request id f0359bf767a41730
+26 verbose etag W/"e065c1cb2cb9802397bdc36424826e76739b3e64"
+27 http request GET https://registry.npmmirror.com/@types%2fnode
+28 http 304 https://registry.npmmirror.com/@types%2fnode
+29 verbose headers {
+29 verbose headers   server: 'Tengine',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'strict-transport-security': 'max-age=5184000',
+29 verbose headers   date: 'Tue, 13 May 2025 10:08:58 GMT',
+29 verbose headers   'request-id': '25d25ef6-71ac-41df-91de-fafa4930649c',
+29 verbose headers   'cache-control': 'public, max-age=300',
+29 verbose headers   'x-frame-options': 'SAMEORIGIN',
+29 verbose headers   'x-xss-protection': '1; mode=block',
+29 verbose headers   'x-content-type-options': 'nosniff',
+29 verbose headers   'x-download-options': 'noopen',
+29 verbose headers   'x-readtime': '2.197',
+29 verbose headers   via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[330,329,304-0,H], ens-cache2.sg25[333,0]',
+29 verbose headers   vary: 'Origin, Accept, Accept-Encoding',
+29 verbose headers   etag: 'W/"e065c1cb2cb9802397bdc36424826e76739b3e64"',
+29 verbose headers   age: '0',
+29 verbose headers   'ali-swift-global-savetime': '1747130938',
+29 verbose headers   'x-cache': 'HIT TCP_REFRESH_HIT dirn:-2:-2',
+29 verbose headers   'x-swift-savetime': 'Tue, 13 May 2025 10:08:58 GMT',
+29 verbose headers   'x-swift-cachetime': '300',
+29 verbose headers   'timing-allow-origin': '*',
+29 verbose headers   eagleid: 'a3b5c99617471309384767902e'
+29 verbose headers }
+30 silly get cb [
+30 silly get   304,
+30 silly get   {
+30 silly get     server: 'Tengine',
+30 silly get     connection: 'keep-alive',
+30 silly get     'strict-transport-security': 'max-age=5184000',
+30 silly get     date: 'Tue, 13 May 2025 10:08:58 GMT',
+30 silly get     'request-id': '25d25ef6-71ac-41df-91de-fafa4930649c',
+30 silly get     'cache-control': 'public, max-age=300',
+30 silly get     'x-frame-options': 'SAMEORIGIN',
+30 silly get     'x-xss-protection': '1; mode=block',
+30 silly get     'x-content-type-options': 'nosniff',
+30 silly get     'x-download-options': 'noopen',
+30 silly get     'x-readtime': '2.197',
+30 silly get     via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[330,329,304-0,H], ens-cache2.sg25[333,0]',
+30 silly get     vary: 'Origin, Accept, Accept-Encoding',
+30 silly get     etag: 'W/"e065c1cb2cb9802397bdc36424826e76739b3e64"',
+30 silly get     age: '0',
+30 silly get     'ali-swift-global-savetime': '1747130938',
+30 silly get     'x-cache': 'HIT TCP_REFRESH_HIT dirn:-2:-2',
+30 silly get     'x-swift-savetime': 'Tue, 13 May 2025 10:08:58 GMT',
+30 silly get     'x-swift-cachetime': '300',
+30 silly get     'timing-allow-origin': '*',
+30 silly get     eagleid: 'a3b5c99617471309384767902e'
+30 silly get   }
+30 silly get ]
+31 verbose etag https://registry.npmmirror.com/@types%2fnode from cache
+32 verbose get saving @types/node to /Users/sam/.npm/registry.npmmirror.com/_40types_252fnode/.cache.json
+33 verbose correctMkdir /Users/sam/.npm correctMkdir not in flight; initializing
+34 silly addNameTag next cb for @types/node with tag latest
+35 silly addNamed @types/node@22.15.17
+36 verbose addNamed "22.15.17" is a plain semver version for @types/node
+37 silly cache afterAdd @types/node@22.15.17
+38 verbose afterAdd /Users/sam/.npm/@types/node/22.15.17/package/package.json not in flight; writing
+39 verbose correctMkdir /Users/sam/.npm correctMkdir not in flight; initializing
+40 verbose afterAdd /Users/sam/.npm/@types/node/22.15.17/package/package.json written
+41 silly install resolved [
+41 silly install resolved   {
+41 silly install resolved     name: '@types/node',
+41 silly install resolved     version: '22.15.17',
+41 silly install resolved     license: 'MIT',
+41 silly install resolved     _id: '@types/node@22.15.17',
+41 silly install resolved     maintainers: [ [Object] ],
+41 silly install resolved     contributors: [
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object], [Object],
+41 silly install resolved       [Object], [Object], [Object]
+41 silly install resolved     ],
+41 silly install resolved     homepage: 'https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node',
+41 silly install resolved     dist: {
+41 silly install resolved       shasum: '355ccec95f705b664e4332bb64a7f07db30b7055',
+41 silly install resolved       tarball: 'https://registry.npmmirror.com/@types/node/-/node-22.15.17.tgz',
+41 silly install resolved       fileCount: 76,
+41 silly install resolved       integrity: 'sha512-wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==',
+41 silly install resolved       signatures: [Array],
+41 silly install resolved       unpackedSize: 2354436,
+41 silly install resolved       size: 434371
+41 silly install resolved     },
+41 silly install resolved     main: '',
+41 silly install resolved     types: 'index.d.ts',
+41 silly install resolved     scripts: {},
+41 silly install resolved     _npmUser: { name: 'types', email: 'ts-npm-types@microsoft.com' },
+41 silly install resolved     repository: {
+41 silly install resolved       url: 'git+https://github.com/DefinitelyTyped/DefinitelyTyped.git',
+41 silly install resolved       type: 'git',
+41 silly install resolved       directory: 'types/node'
+41 silly install resolved     },
+41 silly install resolved     description: 'TypeScript definitions for node',
+41 silly install resolved     directories: {},
+41 silly install resolved     dependencies: { 'undici-types': '~6.21.0' },
+41 silly install resolved     typesVersions: { '<=5.6': [Object] },
+41 silly install resolved     _hasShrinkwrap: false,
+41 silly install resolved     peerDependencies: {},
+41 silly install resolved     typeScriptVersion: '5.1',
+41 silly install resolved     _npmOperationalInternal: {
+41 silly install resolved       tmp: 'tmp/node_22.15.17_1746712940115_0.8862880639898518',
+41 silly install resolved       host: 's3://npm-registry-packages-npm-production'
+41 silly install resolved     },
+41 silly install resolved     typesPublisherContentHash: 'fc6995b0ade0c0c7fd18806f0d2dd27d7dd424e1afc0efb8ee459ab933f67239',
+41 silly install resolved     _cnpmcore_publish_time: '2025-05-08T14:02:20.389Z',
+41 silly install resolved     publish_time: 1746712940389,
+41 silly install resolved     _source_registry_name: 'default',
+41 silly install resolved     _shasum: '355ccec95f705b664e4332bb64a7f07db30b7055',
+41 silly install resolved     _resolved: 'https://registry.npmmirror.com/@types/node/-/node-22.15.17.tgz',
+41 silly install resolved     _from: '@types/node@latest',
+41 silly install resolved     bugs: {
+41 silly install resolved       url: 'https://github.com/DefinitelyTyped/DefinitelyTyped/issues'
+41 silly install resolved     },
+41 silly install resolved     readme: 'ERROR: No README data found!'
+41 silly install resolved   }
+41 silly install resolved ]
+42 info install @types/node@22.15.17 into /Users/sam/Work/Tech-test
+43 info installOne @types/node@22.15.17
+44 verbose installOne of @types/node to /Users/sam/Work/Tech-test not in flight; installing
+45 verbose correctMkdir /Users/sam/.npm/_locks correctMkdir not in flight; initializing
+46 verbose lock using /Users/sam/.npm/_locks/types-node-52e0ea96d4b7b780.lock for /Users/sam/Work/Tech-test/node_modules/@types/node
+47 silly install write writing @types/node 22.15.17 to /Users/sam/Work/Tech-test/node_modules/@types/node
+48 verbose unbuild node_modules/@types/node
+49 silly gentlyRm /Users/sam/Work/Tech-test/node_modules/@types/node is being purged from base /Users/sam/Work/Tech-test
+50 verbose gentlyRm don't care about contents; nuking /Users/sam/Work/Tech-test/node_modules/@types/node
+51 verbose tar unpack /Users/sam/.npm/@types/node/22.15.17/package.tgz
+52 verbose tar unpacking to /Users/sam/Work/Tech-test/node_modules/@types/node
+53 silly gentlyRm /Users/sam/Work/Tech-test/node_modules/@types/node is being purged
+54 verbose gentlyRm don't care about contents; nuking /Users/sam/Work/Tech-test/node_modules/@types/node
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 silly gunzTarPerm extractEntry
+57 silly gunzTarPerm extractEntry
+58 silly gunzTarPerm extractEntry
+59 silly gunzTarPerm extractEntry
+60 silly gunzTarPerm extractEntry
+61 silly gunzTarPerm extractEntry
+62 silly gunzTarPerm extractEntry
+63 silly gunzTarPerm extractEntry
+64 silly gunzTarPerm extractEntry
+65 silly gunzTarPerm extractEntry
+66 silly gunzTarPerm extractEntry
+67 silly gunzTarPerm extractEntry
+68 silly gunzTarPerm extractEntry
+69 silly gunzTarPerm extractEntry
+70 silly gunzTarPerm extractEntry
+71 silly gunzTarPerm extractEntry
+72 silly gunzTarPerm extractEntry
+73 silly gunzTarPerm extractEntry
+74 silly gunzTarPerm extractEntry
+75 silly gunzTarPerm extractEntry
+76 silly gunzTarPerm extractEntry
+77 silly gunzTarPerm extractEntry
+78 silly gunzTarPerm extractEntry
+79 silly gunzTarPerm extractEntry
+80 silly gunzTarPerm extractEntry
+81 silly gunzTarPerm extractEntry
+82 silly gunzTarPerm extractEntry
+83 silly gunzTarPerm extractEntry
+84 silly gunzTarPerm extractEntry
+85 silly gunzTarPerm extractEntry
+86 silly gunzTarPerm extractEntry
+87 silly gunzTarPerm extractEntry
+88 silly gunzTarPerm extractEntry
+89 silly gunzTarPerm extractEntry
+90 silly gunzTarPerm extractEntry
+91 silly gunzTarPerm extractEntry
+92 silly gunzTarPerm extractEntry
+93 silly gunzTarPerm extractEntry
+94 silly gunzTarPerm extractEntry
+95 silly gunzTarPerm extractEntry
+96 silly gunzTarPerm extractEntry
+97 silly gunzTarPerm extractEntry
+98 silly gunzTarPerm extractEntry
+99 silly gunzTarPerm extractEntry
+100 silly gunzTarPerm extractEntry
+101 silly gunzTarPerm extractEntry
+102 silly gunzTarPerm extractEntry
+103 silly gunzTarPerm extractEntry
+104 silly gunzTarPerm extractEntry
+105 silly gunzTarPerm extractEntry
+106 silly gunzTarPerm extractEntry
+107 silly gunzTarPerm extractEntry
+108 silly gunzTarPerm extractEntry
+109 silly gunzTarPerm extractEntry
+110 silly gunzTarPerm extractEntry
+111 silly gunzTarPerm extractEntry
+112 silly gunzTarPerm extractEntry
+113 silly gunzTarPerm extractEntry
+114 silly gunzTarPerm extractEntry
+115 silly gunzTarPerm extractEntry
+116 silly gunzTarPerm extractEntry
+117 silly gunzTarPerm extractEntry
+118 silly gunzTarPerm extractEntry
+119 silly gunzTarPerm extractEntry
+120 silly gunzTarPerm extractEntry
+121 silly gunzTarPerm extractEntry
+122 silly gunzTarPerm extractEntry
+123 silly gunzTarPerm extractEntry
+124 silly gunzTarPerm extractEntry
+125 silly gunzTarPerm extractEntry
+126 silly gunzTarPerm extractEntry
+127 silly gunzTarPerm extractEntry
+128 silly gunzTarPerm extractEntry
+129 silly gunzTarPerm extractEntry
+130 silly gunzTarPerm extractEntry
+131 silly gunzTarPerm extractEntry
+132 verbose unlock done using /Users/sam/.npm/_locks/types-node-52e0ea96d4b7b780.lock for /Users/sam/Work/Tech-test/node_modules/@types/node
+133 verbose stack Error: ENOTDIR: not a directory, open '/Users/sam/Work/Tech-test/node_modules/@types/node/package.json'
+134 verbose cwd /Users/sam/Work/Tech-test
+135 error Darwin 24.4.0
+136 error argv "/usr/local/bin/node" "/Users/sam/node_modules/.bin/npm" "install" "--save-dev" "@types/node"
+137 error node v20.9.0
+138 error npm  v2.15.12
+139 error path /Users/sam/Work/Tech-test/node_modules/@types/node/package.json
+140 error code ENOTDIR
+141 error errno -20
+142 error syscall open
+143 error ENOTDIR: not a directory, open '/Users/sam/Work/Tech-test/node_modules/@types/node/package.json'
+144 error If you need help, you may report this error at:
+144 error     <https://github.com/npm/npm/issues>
+145 verbose exit [ -20, true ]
+146 verbose unbuild node_modules/@types/node
+147 silly gentlyRm /Users/sam/Work/Tech-test/node_modules/@types/node is being purged from base /Users/sam/Work/Tech-test
+148 verbose gentlyRm don't care about contents; nuking /Users/sam/Work/Tech-test/node_modules/@types/node
+149 silly vacuum-fs purging /Users/sam/Work/Tech-test/node_modules/@types/node
+150 silly vacuum-fs removing /Users/sam/Work/Tech-test/node_modules/@types
+151 silly vacuum-fs quitting because other entries in /Users/sam/Work/Tech-test/node_modules
