@@ -17,6 +17,6 @@ const common = `
  * https://github.com/cucumber/cucumber-js/blob/main/docs/profiles.md
  */
 module.exports = {
-  default: `${common} --world-parameters '{"environment": "test"}'`,
-  local: `${common} --world-parameters '{"environment": "dev"}'`,
+  default: `${common} --world-parameters '{"environment": "dev"}'`,
+  dev: `${common} --world-parameters '{"environment": "dev"}'`,
 };

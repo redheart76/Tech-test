@@ -1,6 +1,6 @@
 import { LaunchOptions, selectors } from 'playwright';
 
-selectors.setTestIdAttribute('data-test-id');
+selectors.setTestIdAttribute('data-qa');
 
 export const browserOptions: LaunchOptions = {
   slowMo: 0,

@@ -1,0 +1,10 @@
+{
+  "email": [
+    "redheart76@gmail.com"
+  ],
+  "redirects": {
+    "base": "https://automationexercise.com/",
+    "signup": "https://automationexercise.com/login"
+  }
+
+}

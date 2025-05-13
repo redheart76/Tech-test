@@ -1,0 +1,64 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "place-order;ensure-a-cusstomer-can-register-a-new-account-while-checking-out",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Ensure a cusstomer can register a new account while checking out",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I have added a product to my cart",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I process to checkout",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I fill in the checkout form with valid details",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should be able to signup and create a new account",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "place-order",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Place Order",
+    "tags": [],
+    "uri": "features\\place_order.feature"
+  }
+]
