@@ -42,8 +42,8 @@
 21 verbose addNameTag registry:https://registry.npmmirror.com/@types%2fnode not in flight; fetching
 22 verbose request uri https://registry.npmmirror.com/@types%2fnode
 23 verbose request no auth needed
-24 info attempt registry request try #1 at 10:08:57 PM
-25 verbose request id f0359bf767a41730
+24 info attempt registry request try #1 at 10:12:24 PM
+25 verbose request id cf1854f4752072e9
 26 verbose etag W/"e065c1cb2cb9802397bdc36424826e76739b3e64"
 27 http request GET https://registry.npmmirror.com/@types%2fnode
 28 http 304 https://registry.npmmirror.com/@types%2fnode
@@ -59,16 +59,16 @@
 29 verbose headers   'x-content-type-options': 'nosniff',
 29 verbose headers   'x-download-options': 'noopen',
 29 verbose headers   'x-readtime': '2.197',
-29 verbose headers   via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[330,329,304-0,H], ens-cache2.sg25[333,0]',
+29 verbose headers   via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[0,0,304-0,H], ens-cache9.sg25[6,0]',
 29 verbose headers   vary: 'Origin, Accept, Accept-Encoding',
 29 verbose headers   etag: 'W/"e065c1cb2cb9802397bdc36424826e76739b3e64"',
-29 verbose headers   age: '0',
+29 verbose headers   age: '206',
 29 verbose headers   'ali-swift-global-savetime': '1747130938',
-29 verbose headers   'x-cache': 'HIT TCP_REFRESH_HIT dirn:-2:-2',
+29 verbose headers   'x-cache': 'HIT TCP_IMS_HIT dirn:12:303272477',
 29 verbose headers   'x-swift-savetime': 'Tue, 13 May 2025 10:08:58 GMT',
 29 verbose headers   'x-swift-cachetime': '300',
 29 verbose headers   'timing-allow-origin': '*',
-29 verbose headers   eagleid: 'a3b5c99617471309384767902e'
+29 verbose headers   eagleid: 'a3b5c99d17471311445857057e'
 29 verbose headers }
 30 silly get cb [
 30 silly get   304,
@@ -84,16 +84,16 @@
 30 silly get     'x-content-type-options': 'nosniff',
 30 silly get     'x-download-options': 'noopen',
 30 silly get     'x-readtime': '2.197',
-30 silly get     via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[330,329,304-0,H], ens-cache2.sg25[333,0]',
+30 silly get     via: 'sg25.l1, ens-cache2.sg25, l2sg4.l2, cache1.l2sg4, npmmirror-x86-20220823002, cache1.l2sg4[324,323,304-0,H], cache10.l2sg4[326,0], ens-cache2.sg25[0,0,304-0,H], ens-cache9.sg25[6,0]',
 30 silly get     vary: 'Origin, Accept, Accept-Encoding',
 30 silly get     etag: 'W/"e065c1cb2cb9802397bdc36424826e76739b3e64"',
-30 silly get     age: '0',
+30 silly get     age: '206',
 30 silly get     'ali-swift-global-savetime': '1747130938',
-30 silly get     'x-cache': 'HIT TCP_REFRESH_HIT dirn:-2:-2',
+30 silly get     'x-cache': 'HIT TCP_IMS_HIT dirn:12:303272477',
 30 silly get     'x-swift-savetime': 'Tue, 13 May 2025 10:08:58 GMT',
 30 silly get     'x-swift-cachetime': '300',
 30 silly get     'timing-allow-origin': '*',
-30 silly get     eagleid: 'a3b5c99617471309384767902e'
+30 silly get     eagleid: 'a3b5c99d17471311445857057e'
 30 silly get   }
 30 silly get ]
 31 verbose etag https://registry.npmmirror.com/@types%2fnode from cache
