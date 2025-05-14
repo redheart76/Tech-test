@@ -17,8 +17,8 @@ export const configureEnvironment = async (
     'DEV',
     'TEST',
   ];
-  // Determine which environment we're running against, if it's dve/test. Default to test if nothing is provided
-  const environment = world.parameters?.environment?.toLowerCase() ?? 'test';
+  // Determine which environment we're running against, if it's dve/test. Default to dev if nothing is provided
+  const environment = world.parameters?.environment?.toLowerCase() ?? 'dev';
   const validEnv = allowedEnvironments.some((element) => element.toLowerCase() === environment);
   if (!validEnv) {
     // eslint-disable-next-line no-console
@@ -39,6 +39,8 @@ export const configureEnvironment = async (
  * @param emailAddress
  */
 export const manualLoginSteps = async (page: Page, emailAddress: string): Promise<void> => {
+  await page.goto('https://automationexercise.com/', { waitUntil: 'domcontentloaded' });
+  await page.getByText('login').click();
   const password: string = env.PASS || '';
   const emailField = '[data-qa=login-email]';
   const passwordField = '[data-qa=login-password]';

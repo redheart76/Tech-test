@@ -1,9 +1,13 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
-import { ICustomWorld } from '../src/support/custom-world';
+import { ICustomWorld } from '../support/custom-world';
+import { manualLoginSteps } from '../support/common-hooks.helper';
+
+
 
 Given('I have added a product to my cart', async function (this: ICustomWorld) {
-
+    const page = this.getPage();
+    await manualLoginSteps(page, 'redheart76@gmail.com');
     
 });
 
