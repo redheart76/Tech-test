@@ -49,3 +49,55 @@ export const manualLoginSteps = async (page: Page, emailAddress: string): Promis
   await page.locator(passwordField).fill(password);
   await page.locator(submitButton).click();
 };
+
+export const newUsers = async (page: Page, userName: string, email: string): Promise<void> => {
+  const nameField = '[data-qa=signup-name]';
+  const emailField = '[data-qa=signup-email]';
+  await page.locator(nameField).fill(userName);
+  await page.locator(emailField).fill(email);
+};
+
+export const userDetails = async (page: Page): Promise<void> => {
+ const password: string = env.PASS || '';
+  const passwordField = '[data-qa=password]';
+  const dayDropdown = '[data-qa=days]';
+  const monthDropdown = '[data-qa=months]';
+  const yearDropdown = '[data-qa=years]';
+  const firstNameField = '[data-qa=first_name]';
+  const lastNameField = '[data-qa=last_name]';
+  const stateField = '[data-qa=state]';
+  const cityField = '[data-qa=city]';
+  const zipCodeField = '[data-qa=zipcode]';
+  const mobileField = '[data-qa=mobile_number]';
+  page.getByText('Mr').check
+  await page.locator(passwordField).fill(password);
+  await page.locator(dayDropdown).selectOption({ label: '1' });
+  await page.locator(monthDropdown).selectOption({ label: 'January' });
+  await page.locator(yearDropdown).selectOption({ label: '1990' });
+  await page.locator(firstNameField).fill('Test FN');
+  await page.locator(lastNameField).fill('Test LN');
+  await page.locator('[data-qa=address]').fill('Test Address');
+  await page.locator(stateField).fill('Test State');
+  await page.locator(cityField).fill('Test City');
+  await page.locator(zipCodeField).fill('12345');
+  await page.locator(mobileField).fill('1234567890');
+  await page.getByText('Create Account').click();
+};
+
+export const paymentCardDetails = async (page: Page): Promise<void> => {
+ const password: string = env.PASS || '';
+  const namedField = '[data-qa=name-on-card]';
+  const numberField = '[data-qa=card-number]';
+  const cvcField = '[data-qa=cvc]';
+  const monthField = '[data-qa=expiry-month]';
+  const yearField = '[data-qa=expiry-year]'
+  await page.locator(namedField).fill('Test FN');
+  await page.locator(numberField).fill('4111111111111111');
+  await page.locator(cvcField).fill('123');
+  await page.locator(monthField).fill('12');
+  await page.locator(yearField).fill('2025');
+  await page.locator('[data-qa="pay-button"]').click()
+  // Delete the account
+  // Todo: make the above function to a hook
+   await page.getByRole('link', { name: ' Delete Account' }).click();
+};
