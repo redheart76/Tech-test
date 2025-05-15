@@ -3,6 +3,7 @@ import { expect } from '@playwright/test';
 import { ICustomWorld } from '../support/custom-world';
 import { manualLoginSteps, newUsers, paymentCardDetails, userDetails } from '../support/common-hooks.helper';
 import { time } from 'console';
+import { generateUserData } from '../support/test_data';
 
 
 
@@ -20,7 +21,9 @@ When('I click on the "Sign Up" button', async function (this: ICustomWorld) {
 
 When('I fill in the registration form with valid details', async function (this: ICustomWorld) {
   const page = this.getPage();
-  await newUsers(page, 'Test User', 'redheart76+2@gmail.com');
+  const userData = generateUserData();
+  this.userData = userData;
+  await newUsers(page, `${userData.name}`, `${userData.email}`);
   await page.locator('[data-qa=signup-button]').click();
   await page.waitForLoadState('load')
   await userDetails(page);
@@ -37,8 +40,9 @@ Then('I am able to contiune to use the account', async function (this: ICustomWo
   const page = this.getPage();
   await page.locator('[data-qa=continue-button]').click();
   await page.locator('[class="fa fa-user"]').waitFor({ state: 'visible' });
+  const userName = this.userData?.name;
   // Verify that the user is logged in
-  // await expect(page.locator('[class="fa fa-user"]')).toHaveText(' Logged in as Test User', { timeout: 10000 });
+  await expect(page.locator('[class="nav navbar-nav"]')).toContainText(`Logged in as ${userName}`, { timeout: 10000 });
 });
 
 When('I add a product to the cart', async function (this: ICustomWorld) {
@@ -53,23 +57,19 @@ When('I proceed to checkout', async function (this: ICustomWorld) {
    await page.locator('[class="btn btn-default check_out"]').click();
    // Verify delivery address
    expect(page.locator('#address_delivery')).not.toBeNull()
-      await page.locator('[class="cart_total_price"]').nth(1).waitFor({ state: 'visible' });
-   const productText = await page.locator('[class="cart_total_price"]').nth(1).textContent();
-   console.log('Product text:', productText);
    // Review the order
-
-  //  expect(page.locator('product-1')).toContainText('Blue Top') // Verify product name
-  //  expect(page.locator('[class="cart_total_price"]')).toHaveText('Rs. 500') // Verify product price
-
-  // Todo: add a comment in the field
-
-  await page.locator('[class="btn btn-default check_out"]').click();
-
+   expect(page.locator('[class="cart_description"]')).toContainText('Blue Top')
+   expect(page.locator('[class="cart_total"]')).toHaveText('Rs. 500')
+   await page.locator('[class="form-control"]').fill('My comment');
+   await page.locator('[class="btn btn-default check_out"]').click();
 });
 
 When('I complete the payment details', async function (this: ICustomWorld) {
   const page = this.getPage();
   await paymentCardDetails(page);
-   
+});
 
+When('I review the cart', async function (this: ICustomWorld) {
+  const page = this.getPage();
+  await page.getByRole('link', { name: ' Cart' }).click();
 });

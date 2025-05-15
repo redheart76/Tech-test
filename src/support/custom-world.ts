@@ -1,6 +1,7 @@
 import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
 import * as messages from '@cucumber/messages';
 import { BrowserContext, Page } from 'playwright';
+import { generateUserData } from './test_data';
 
 interface Configuration {
   email: string[];
@@ -24,6 +25,7 @@ export interface ICustomWorld extends World {
   environmentConfig?: Configuration;
   workerId?: number;
   getPage(): Page;
+  userData?: ReturnType<typeof generateUserData>;
 }
 
 export class CustomWorld extends World implements ICustomWorld {
