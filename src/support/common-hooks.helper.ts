@@ -89,24 +89,6 @@ export const userDetails = async (page: Page): Promise<void> => {
   await page.getByText('Create Account').click();
 };
 
-// export const paymentCardDetails = async (page: Page): Promise<void> => {
-//  const password: string = env.PASS || '';
-//   const namedField = '[data-qa=name-on-card]';
-//   const numberField = '[data-qa=card-number]';
-//   const cvcField = '[data-qa=cvc]';
-//   const monthField = '[data-qa=expiry-month]';
-//   const yearField = '[data-qa=expiry-year]'
-//   await page.locator(namedField).fill('Test FN');
-//   await page.locator(numberField).fill('4111111111111111');
-//   await page.locator(cvcField).fill('123');
-//   await page.locator(monthField).fill('12');
-//   await page.locator(yearField).fill('2025');
-//   await page.locator('[data-qa="pay-button"]').click()
-//   // Delete the account
-//   // Todo: make the above function to a hook
-//    await page.getByRole('link', { name: ' Delete Account' }).click();
-// };
-
 export const paymentCardDetails = async (page: Page): Promise<void> => {
   const namedField = '[data-qa=name-on-card]';
   const numberField = '[data-qa=card-number]';
@@ -126,7 +108,7 @@ export const paymentCardDetails = async (page: Page): Promise<void> => {
   await page.locator(cvcField).fill(cvc);
   await page.locator(monthField).fill(expiryMonth);
   await page.locator(yearField).fill(expiryYear);
-  await page.locator('[data-qa="pay-button"]').click();
+  
   // Delete the account
   await page.getByRole('link', { name: ' Delete Account' }).click();
 };

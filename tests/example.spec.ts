@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, request } from '@playwright/test';
 
 test('has title', async ({ page }) => {
   await page.goto('https://playwright.dev/');
@@ -7,12 +7,59 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+const baseUrl = 'https://automationexercise.com';
+const email = 'redheart76+2@gmail.com'; // Replace with a real user email
+const password = 'D3v3nv1r0m3nt';      // Use the correct password for the environment
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+test('should verify login with valid details', async ({ request }) => {
+  const response = await request.post(`${baseUrl}/api/verifyLogin`, {
+    form: {
+      email,
+      password,
+    },
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  expect(response.status()).toBe(200);
+  const body = await response.json();
+  expect(body.message).toBe('User exists!');
+});
+
+// ...existing code...
+
+test('should return 404 for login with invalid details', async ({ request }) => {
+  const response = await request.post(`${baseUrl}/api/verifyLogin`, {
+    form: {
+      email: 'invaliduser@example.com',
+      password: 'wrongpassword',
+    },
+    // No need to set headers, Playwright handles it
+  });
+
+  expect(response.status()).toBe(404);
+  const body = await response.json();
+  expect(body.message).toBe('User not found!');
+});
+// ...existing code...
+
+test('should return 405 for unsupported DELETE method on verifyLogin', async ({ request }) => {
+  const response = await request.delete(`${baseUrl}/api/verifyLogin`);
+  expect(response.status()).toBe(405);
+  const body = await response.json();
+  expect(body.message).toBe('This request method is not supported.');
+});
+
+test('should return 400 when email parameter is missing', async ({ request }) => {
+  const response = await request.post(`${baseUrl}/api/verifyLogin`, {
+    form: {
+      password, // Only password, no email
+    },
+    // No need to set headers, Playwright handles it
+  });
+
+  expect(response.status()).toBe(400);
+  const body = await response.json();
+  expect(body.message).toBe('Bad request, email or password parameter is missing in POST request.');
 });

@@ -69,6 +69,20 @@ When('I complete the payment details', async function (this: ICustomWorld) {
   await paymentCardDetails(page);
 });
 
+When('I confirm the order', async function (this: ICustomWorld) {
+  const page = this.getPage();
+  await page.locator('[data-qa="pay-button"]').click();
+});
+
+When('I should be placed the order successfully', async function (this: ICustomWorld) {
+  const page = this.getPage();
+  const successMessage = page.locator('#success_message');
+  await successMessage.waitFor({ state: 'visible' });
+  // Verify that the success message is displayed
+  expect(successMessage).toContainText('Congratulations! Your order has been confirmed!');
+});
+
+
 When('I review the cart', async function (this: ICustomWorld) {
   const page = this.getPage();
   await page.getByRole('link', { name: ' Cart' }).click();
