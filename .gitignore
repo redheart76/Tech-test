@@ -1,6 +1,8 @@
+.DS_Store
+.idea/
 
-node_modules
-node_modules
+# node_modules
+node_modules/
 
 # Playwright
 /test-results/
@@ -11,8 +13,6 @@ node_modules
 #reports
 reports/*
 traces/
-report/
-report.html
 
 # Logs
 logs
