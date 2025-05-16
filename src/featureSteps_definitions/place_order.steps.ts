@@ -1,7 +1,7 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { ICustomWorld } from '../support/custom-world';
-import { newUsers, paymentCardDetails, userDetails } from '../support/utilities';
+import { newUsers, paymentCardDetails, userDetails } from '../support/utils';
 import { generateUserData } from '../support/test_data';
 
 
