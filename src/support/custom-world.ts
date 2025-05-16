@@ -26,6 +26,8 @@ export interface ICustomWorld extends World {
   workerId?: number;
   getPage(): Page;
   userData?: ReturnType<typeof generateUserData>;
+  apiResponse?: any;
+  apiResponseBody?: any;
 }
 
 export class CustomWorld extends World implements ICustomWorld {

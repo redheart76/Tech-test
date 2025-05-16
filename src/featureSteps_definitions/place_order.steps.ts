@@ -2,7 +2,6 @@ import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { ICustomWorld } from '../support/custom-world';
 import { manualLoginSteps, newUsers, paymentCardDetails, userDetails } from '../support/common-hooks.helper';
-import { time } from 'console';
 import { generateUserData } from '../support/test_data';
 
 

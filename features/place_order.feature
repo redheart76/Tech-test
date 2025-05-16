@@ -1,4 +1,4 @@
-@video
+@unauthenticated
 Feature: Place Order
 
         Scenario: Ensure a cusstomer can register a new account before checking out and the new account can be used to login
