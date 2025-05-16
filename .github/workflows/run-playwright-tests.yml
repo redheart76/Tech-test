@@ -1,0 +1,74 @@
+name: Playwright - Tests GAH
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+    workflow_call:
+    inputs:
+      features:
+        description: 'Select the feature you want to test
+        required: true
+        type: string
+      environment:
+        description: 'Environment to run the test on'
+        required: true
+        type: string
+      workers:
+        description: 'Enter the number of parallel workers'
+        required: true
+        type: string
+      runner:
+        description: 'Select the runner to use'
+        required: true
+        type: string
+env:
+
+
+jobs:
+  run-playwright-test:
+    name: 'Running test automation'
+    runs-on:
+      labels: ${{ inputs.runner }}
+    env:
+      FEATURES: ${{ inputs.features }}
+      ENVIRONMENT: ${{ inputs.environment }}
+      WORKERS: ${{ inputs.workers }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure Environment
+        working-directory: githubhelper
+        run: |
+          npm install
+          npm run setup
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps > /dev/null
+
+      - name: Create .env file
+        run: |
+          touch .env
+          echo PASS=${{ secrets.PASS }} >> .env
+          
+      - name: Run Playwright Tests
+        run: |
+          if [ ${{ inputs.features }} == 'minimum' ]; then
+            npm run test -- -p $ENVIRONMENT --parallel=$WORKERS --tags @minimum
+          elif [ ${{ inputs.features }} == 'all' ]; then
+            npm run test -- -p $ENVIRONMENT --parallel=$WORKERS
+
+      - name: Upload trace files to Github
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: trace-file
+          path: traces/
+          retention-days: 15
+

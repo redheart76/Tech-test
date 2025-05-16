@@ -9,6 +9,7 @@ import { generateUserData } from '../support/test_data';
 Given('I am on the homepage', async function (this: ICustomWorld) {
     const page = this.getPage();
     // Access the base URL directly from the environment config
+    // Todo: tweak this to direct test URL when using test environment 
     const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com/';
     await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
     await expect(page).toHaveURL(baseUrl);

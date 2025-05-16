@@ -1,0 +1,51 @@
+name: Playwright Test Automation - Run Manually
+on:
+  workflow_dispatch:
+    inputs:
+      features:
+        description: 'Select the feature you want to test (minimum option is for smoke tests)'
+        required: true
+        default: minimum
+        type: choice
+        options:
+          - 'minimum'
+          - 'all'
+      environment:
+        description: 'Environment to run the test on'
+        required: true
+        default: dev
+        type: choice
+        options:
+          - 'test'
+        
+      workers:
+        description: 'Enter the number of parallel workers'
+        required: true
+        default: '5'
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '10'
+      runner:
+        description: 'Select the runner to use'
+        required: true
+        default: 'ubuntu-latest-m'
+        type: choice
+        options:
+          - 'ubuntu-latest-m'
+          - 'windows-latest-l'
+          - 'ubuntu-16core-64gb'
+jobs:
+  run-playwright-test:
+    name: 'Playwright Test Automation - ${{ inputs.environment }}'
+    uses: ./.github/workflows/run-playwright-tests.yml
+    secrets: inherit
+    with:
+      features: ${{ inputs.features }}
+      environment: ${{ inputs.environment }}
+      workers: ${{ inputs.workers }}
+      runner: ${{ inputs.runner }}
