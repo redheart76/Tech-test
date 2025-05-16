@@ -16,6 +16,7 @@ on:
         default: dev
         type: choice
         options:
+          - 'dev'
           - 'test'
         
       workers:

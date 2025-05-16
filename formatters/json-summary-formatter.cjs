@@ -25,7 +25,7 @@ class JsonSummaryFormatter extends cucumber.Formatter {
       .filter((attachment) => attachment.mediaType === 'application/json')
       .map((attachment) => JSON.parse(attachment.body))
       .find((body) => body.environment);
-    const environment = environmentAttachment?.environment ?? 'test';
+    const environment = environmentAttachment?.environment ?? 'dev';
 
     testCaseAttempts.forEach((testCaseAttempt) => {
       if (issueHelpers.isFailure(testCaseAttempt.worstTestStepResult)) {
