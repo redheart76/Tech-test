@@ -8,8 +8,10 @@ import { generateUserData } from '../support/test_data';
 
 Given('I am on the homepage', async function (this: ICustomWorld) {
     const page = this.getPage();
-    await page.goto('https://automationexercise.com/', { waitUntil: 'domcontentloaded' });
-    await expect(page).toHaveURL('https://automationexercise.com/');
+    // Access the base URL directly from the environment config
+    const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com/';
+    await page.goto(baseUrl, { waitUntil: 'domcontentloaded' });
+    await expect(page).toHaveURL(baseUrl);
 });
 
 

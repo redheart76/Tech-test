@@ -20,4 +20,5 @@ const common = `
 module.exports = {
   default: `${common} --world-parameters '{"environment": "dev"}'`,
   dev: `${common} --world-parameters '{"environment": "dev"}'`,
+  test: `${common} --world-parameters '{"environment": "test"}'`,
 };

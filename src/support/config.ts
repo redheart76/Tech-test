@@ -4,7 +4,7 @@ selectors.setTestIdAttribute('data-qa');
 
 export const browserOptions: LaunchOptions = {
   slowMo: 0,
-  headless: true,
+  headless: false,
   args: ['--use-fake-ui-for-media-stream', '--use-fake-device-for-media-stream'],
   firefoxUserPrefs: {
     'media.navigator.streams.fake': true,
