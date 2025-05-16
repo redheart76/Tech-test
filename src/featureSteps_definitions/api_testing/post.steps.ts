@@ -4,7 +4,7 @@ import { ICustomWorld } from "../../support/custom-world";
 import { env } from "process";
 
 When('I send a POST request to the login endpoint to verify the new account', async function (this: ICustomWorld) {
-  const baseUrl = 'https://automationexercise.com';
+  const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com';
   const password: string = env.PASS || '';
   const email = this.userData?.email; // User's email from the previous step
 
@@ -29,7 +29,7 @@ Then('I should receive a correct response', async function (this: ICustomWorld) 
 });
 
 When('I send a POST request to the login endpoint to verify login with invalid details', async function (this: ICustomWorld) {
-  const baseUrl = 'https://automationexercise.com';
+  const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com';
  // invalid email and password
   const invalidEmail = 'abc@abc.com'; 
   const invalidPassword = '12345678';      
@@ -58,7 +58,7 @@ Then('I should receive an error response', async function (this: ICustomWorld) {
 });
 
 When('I send a POST request to the login endpoint to verify login without email', async function (this: ICustomWorld) {
-  const baseUrl = 'https://automationexercise.com';
+  const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com';
  // invalid email and password
   const invalidPassword = '12345678';      
 
@@ -86,7 +86,7 @@ Then('I should receive a response says email is missing', async function (this: 
 });
 
 When('I send a DELETE request to the login endpoint to verify login', async function (this: ICustomWorld) {
-  const baseUrl = 'https://automationexercise.com';
+  const baseUrl = this.environmentConfig?.redirects?.base || 'https://automationexercise.com';
   const password: string = env.PASS || '';
   const email = this.userData?.email; // User's email from the previous step
 

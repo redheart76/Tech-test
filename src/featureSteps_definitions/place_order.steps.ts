@@ -1,7 +1,7 @@
 import { Given, Then, When } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { ICustomWorld } from '../support/custom-world';
-import { manualLoginSteps, newUsers, paymentCardDetails, userDetails } from '../support/common-hooks.helper';
+import { newUsers, paymentCardDetails, userDetails } from '../support/utilities';
 import { generateUserData } from '../support/test_data';
 
 
@@ -88,4 +88,15 @@ When('I should be placed the order successfully', async function (this: ICustomW
 When('I review the cart', async function (this: ICustomWorld) {
   const page = this.getPage();
   await page.getByRole('link', { name: ' Cart' }).click();
+});
+
+When('I delete the account', async function (this: ICustomWorld) {
+  const page = this.getPage();
+  await page.getByRole('link', { name: ' Delete Account' }).click();
+});
+
+Then('I am able to delete the account successfully', async function (this: ICustomWorld) {
+  const page = this.getPage();
+  await expect(page.locator('[data-qa=account-deleted]')).toHaveText('Account Deleted!');
+  await page.locator('[data-qa=continue-button]').click();
 });
