@@ -13,6 +13,9 @@ Feature: Place Order
              And I complete the payment details
              And I confirm the order
              Then I should be placed the order successfully
+             When I delete the account
+             Then I am able to delete the account successfully
+             And I am on the homepage
              
         Scenario: Ensure a customer can register a new account while checking out and the new account can be used to login
              Given I am on the homepage
