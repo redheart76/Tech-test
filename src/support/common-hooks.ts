@@ -11,7 +11,6 @@ import {
 import 'dotenv/config';
 import fsExtra from 'fs-extra';
 import { ICustomWorld } from './custom-world';
-import { configureEnvironment } from './common-hooks.helper';
 import dayjs from 'dayjs';
 
 

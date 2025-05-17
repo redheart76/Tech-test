@@ -11,9 +11,19 @@ export const newUsers = async (page: Page, userName: string, email: string): Pro
   await page.locator(emailField).fill(email);
 };
 
-export const userDetails = async (page: Page): Promise<void> => {
+// Define UserDataType if not imported from elsewhere
+export type UserDataType = {
+  firstName: string;
+  lastName: string;
+  address1: string;
+  state: string;
+  city: string;
+  zipcode: string;
+  mobileNumber: string;
+};
+
+export const userDetails = async (page: Page, user: UserDataType): Promise<void> => {
   const password: string = env.PASS || '';
-  const user = generateUserData();
   const passwordField = '[data-qa=password]';
   const dayDropdown = '[data-qa=days]';
   const monthDropdown = '[data-qa=months]';
